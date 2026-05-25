@@ -18,13 +18,14 @@ export default function PersistentLayoutsServerRenderingRoute() {
         this:
       </div>
       <Code html={cookieStorageExampleHTML} />
-      <Callout intent="primary">
+      <Callout intent="warning">
         If an async storage API is required, saved layouts should be loaded
         using{" "}
         <ExternalLink href="https://react.dev/reference/react/Suspense">
           suspense
         </ExternalLink>
-        .
+        . Do not conditionally use <code>localStorage</code> as it will cause
+        errors during hydration.
       </Callout>
       <Callout intent="primary">
         The example above includes <code>path=/</code> so that saved layouts can
